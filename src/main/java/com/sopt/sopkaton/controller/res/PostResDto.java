@@ -9,8 +9,10 @@ import lombok.Getter;
 public class PostResDto {
     private Long id;
     private String imgUrl;
+    private String name;
+    private String title;
 
     public static PostResDto of(Post post) {
-        return new PostResDto(post.getId(), post.getImageUrl());
+        return new PostResDto(post.getId(), post.getImageUrl(), post.getName(), post.getTitle());
     }
 }
