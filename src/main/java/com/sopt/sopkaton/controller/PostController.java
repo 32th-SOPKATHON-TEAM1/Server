@@ -20,7 +20,7 @@ public class PostController {
     @GetMapping("/{postId}")
     public ApiResponse<PostResDto> getPost(@PathVariable Long postId) {
         Post post = postService.getPost(postId);
-        return ApiResponse.success(Success.PRODUCT_SUCCESS, PostResDto.of(post));
+        return ApiResponse.success(Success.FIND_POST_SUCCESS, PostResDto.of(post));
     }
 
     @PostMapping
