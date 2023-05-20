@@ -3,6 +3,7 @@ package com.sopt.sopkaton.domain;
 import javax.persistence.*;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -20,5 +21,13 @@ public class Post {
     private String name;
     @Column(nullable = false)
     private String title;
+
+    @Builder
+    public Post(String imageUrl, String name, String title){
+        this.imageUrl = imageUrl;
+        this.name = name;
+        this.title = title;
+    }
+
 
 }

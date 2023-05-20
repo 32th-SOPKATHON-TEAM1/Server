@@ -1,6 +1,7 @@
 package com.sopt.sopkaton.service;
 
 import com.sopt.sopkaton.controller.req.PostReqDto;
+import com.sopt.sopkaton.controller.res.PostResDto;
 import com.sopt.sopkaton.domain.Post;
 import com.sopt.sopkaton.exception.model.NotFoundException;
 import com.sopt.sopkaton.repository.PostRepository;
@@ -22,7 +23,13 @@ public class PostService {
     }
 
     @Transactional
-    public Post savePost(PostReqDto request) {
-        return null;
+    public PostResDto savePost(String imageUrl, String name, String title) {
+        Post newPost = Post.builder()
+                .imageUrl(imageUrl)
+                .name(name)
+                .title(title)
+                .build();
+        postRepository.save(newPost);
+        return PostResDto.of(newPost);
     }
 }

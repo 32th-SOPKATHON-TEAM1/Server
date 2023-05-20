@@ -34,19 +34,20 @@ public class PostController {
         return ApiResponse.success(Success.FIND_POST_SUCCESS, PostResDto.of(post));
     }
 
-    @GetMapping
-    public ApiResponse<DalleResDto> savePost() {
-        DalleReqDto dto = new DalleReqDto("Darkness came into the village and everyone was depressed. One citizen went out looking for another village, but feeling depressed, he returned and encouraged the villagers. Eventually, the village regained hope and found happiness. a painting of a cat in an oriental painting style");
+    @PostMapping
+    public ApiResponse<PostResDto> savePost(@RequestBody PostReqDto request) {
+        DalleReqDto dto = new DalleReqDto("");
         Call<DalleResDto> call = externalService.getPost(dto);
+        PostResDto result = null;
         try {
             Response<DalleResDto> response = call.execute();
             if (response.isSuccessful()) {
-                return ApiResponse.success(Success.SAVE_POST_SUCCESS, response.body());
+                result = postService.savePost(response.body().getData().get(0).getUrl(),request.getName(), request.getTitle());
             }
         } catch (IOException e) {
             System.out.println("img error " + e.getMessage());
         }
-        return null;
+        return ApiResponse.success(Success.SAVE_POST_SUCCESS, result);
 
     }
 
