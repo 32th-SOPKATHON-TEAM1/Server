@@ -2,8 +2,10 @@ package com.sopt.sopkaton.controller.res;
 
 import com.sopt.sopkaton.domain.Post;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
+@Getter
 public class PostResDto {
     private Long id;
     private String imgUrl;
