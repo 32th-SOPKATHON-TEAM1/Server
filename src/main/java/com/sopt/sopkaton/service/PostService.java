@@ -7,6 +7,8 @@ import com.sopt.sopkaton.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 import static com.sopt.sopkaton.exception.Error.NOT_FOUND_USER_EXCEPTION;
 
 @Service
@@ -19,6 +21,7 @@ public class PostService {
                 .orElseThrow(() -> new NotFoundException(NOT_FOUND_USER_EXCEPTION, NOT_FOUND_USER_EXCEPTION.getMessage()));
     }
 
+    @Transactional
     public Post savePost(PostReqDto request) {
         return null;
     }
