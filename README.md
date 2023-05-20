@@ -104,7 +104,7 @@ HtmlParser parser = new HtmlParser();
 ## 📂 ERD
 
 ---
-![image](https://github.com/32th-SOPKATHON-TEAM1/Server/assets/82709044/bc4c5eda-3c71-4c22-aff6-ac772854d394)
+![image](https://github.com/32th-SOPKATHON-TEAM1/Server/assets/82709044/24c2a3ac-8417-4cfc-b47b-693e3842894e)
 
 ## 📂 프로젝트 구조
 
