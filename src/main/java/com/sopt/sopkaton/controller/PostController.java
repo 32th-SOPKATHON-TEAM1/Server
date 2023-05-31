@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import retrofit2.Call;
 import retrofit2.Response;
 
-@CrossOrigin("https://emotion-studio.netlify.app")
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/post")
